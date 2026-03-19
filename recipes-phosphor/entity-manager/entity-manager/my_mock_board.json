@@ -1,0 +1,10 @@
+[
+    {
+        "Name": "My_Mock_Board",
+        "Probe": "TRUE",
+        "Type": "Board",
+        "Class": "System",
+        "Manufacturer": "Custom Lab",
+        "Exposes": []
+    }
+]

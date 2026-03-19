@@ -1,0 +1,32 @@
+From eddf7a30e4846cf560c95cec6d2cb43ba5f1ae73 Mon Sep 17 00:00:00 2001
+From: "Brandon.Tseng" <brandon.tseng@quantatw.com>
+Date: Tue, 27 Jan 2026 01:46:20 +0000
+Subject: [PATCH] Add practice log
+
+Upstream-Status: Inappropriate [practice]
+Signed-off-by: Brandon <brandon@example.com>
+---
+ bmc_state_manager.hpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/bmc_state_manager.hpp b/bmc_state_manager.hpp
+index 8c2d498..f0cce6b 100644
+--- a/bmc_state_manager.hpp
++++ b/bmc_state_manager.hpp
+@@ -7,7 +7,7 @@
+ #include <sys/sysinfo.h>
+ 
+ #include <sdbusplus/bus.hpp>
+-
++#include <iostream>
+ #include <cassert>
+ #include <chrono>
+ 
+@@ -68,6 +68,7 @@ class BMC : public BMCInherit
+                 }
+             }))
+     {
++        std::cerr << "TEST STRING: BMC Constructor called (via stderr)" << std::endl;
+         utils::subscribeToSystemdSignals(bus);
+         discoverInitialState();
+         discoverLastRebootCause();

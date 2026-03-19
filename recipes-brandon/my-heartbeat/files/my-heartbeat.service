@@ -1,0 +1,10 @@
+[Unit]
+Description=My Practice Heartbeat Daemon
+
+[Service]
+ExecStart=/usr/bin/my-heartbeat
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
