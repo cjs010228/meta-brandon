@@ -6,13 +6,15 @@ inherit cmake systemd pkgconfig
 
 DEPENDS += "boost sdbusplus"
 
-# 所有檔案指定 subdir=sources
-SRC_URI = "file://main.cpp \
-           file://CMakeLists.txt \
-           file://my-heartbeat.service \
-           file://LICENSE"
+# 修改後的寫法
+SRC_URI = "git://github.com/cjs010228/meta-brandon.git;protocol=https;branch=main"
 
-S = "${UNPACKDIR}"
+# 這行現在才會真正發揮作用
+#SRCREV = "e4e07dacf5aa264a483b4ca330469a748f894436"
+SRCREV = "${AUTOREV}"
+
+# 注意：當使用 Git 時，S 通常要指向 git 資料夾
+S = "${WORKDIR}/git"
 
 SYSTEMD_SERVICE:${PN} = "my-heartbeat.service"
 
