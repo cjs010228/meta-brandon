@@ -13,7 +13,7 @@ SRC_URI = "git://github.com/cjs010228/my-heartbeat-app.git;protocol=https;branch
 SRCREV = "${AUTOREV}"
 
 # 2. 告訴 Meson，抓下來的 Git 原始碼在工作區的 git/ 目錄下
-S = "${WORKDIR}/git"
+#S = "${WORKDIR}/git"
 
 # 3. 傳遞功能開關給 App
 EXTRA_OEMESON:append = " -Denable-debug-log=true"
